@@ -37,7 +37,7 @@ int main()
 {
   if ((in_fp = fopen("exToy.txt", "r")) == NULL) printf("ERROR: Cannot open file. \n");
   else
-	{
+  {
     getChar();
     do { lex(); } while (nextToken != EOF);
   }
@@ -45,45 +45,45 @@ int main()
 //----------------------------------------------------------------------------------------------------
 int lookup(char ch)
 {
-	switch(ch)
+  switch( ch )
 	{
-      case '(':
-         addChar();
-         nextToken = LEFT_PAREN;
-         break;
+    case '(':
+      addChar();
+      nextToken = LEFT_PAREN;
+      break;
+    
+    case ')':
+      addChar();
+      nextToken = RIGHT_PAREN;
+      break;
 
-      case ')':
-         addChar();
-         nextToken = RIGHT_PAREN;
-         break;
+    case '+':
+      addChar();
+      nextToken = ADD_OP;
+      break;
 
-      case '+':
-         addChar();
-         nextToken = ADD_OP;
-         break;
+    case'-':
+      addChar();
+      nextToken = SUB_OP;
+      break;
 
-      case'-':
-         addChar();
-         nextToken = SUB_OP;
-         break;
+    case'*':
+      addChar();
+      nextToken = MULT_OP;
+      break;
 
-      case'*':
-         addChar();
-         nextToken = MULT_OP;
-         break;
+    case'/':
+      addChar();
+      nextToken = DIV_OP;
+      break;
 
-      case'/':
-         addChar();
-         nextToken = DIV_OP;
-        	break;
-
-      default:
-         addChar();
-         nextToken = EOF;
-         break;
-   }
+    default:
+      addChar();
+      nextToken = EOF;
+      break;
+  }
    
-   return nextToken;
+  return nextToken;
 }
 //----------------------------------------------------------------------------------------------------
 void addChar()
