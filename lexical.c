@@ -38,8 +38,8 @@ int main()
 	if ((in_fp = fopen("exToy.txt", "r")) == NULL) printf("ERROR: Cannot open file. \n");
 	else
 	{
-		getChar();
-		do { lex(); } while (nextToken != EOF);
+    getChar();
+    do { lex(); } while (nextToken != EOF);
    }
  }
 //----------------------------------------------------------------------------------------------------
