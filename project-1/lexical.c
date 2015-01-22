@@ -45,7 +45,7 @@ int main()
 //----------------------------------------------------------------------------------------------------
 int lookup(char ch)
 {
-  switch( ch )
+  switch(ch)
 	{
     case '(':
       addChar();
@@ -81,25 +81,24 @@ int lookup(char ch)
       addChar();
       nextToken = EOF;
       break;
-  }
-   
+  }// end of switch
   return nextToken;
 }
 //----------------------------------------------------------------------------------------------------
 void addChar()
 {
-	if (lexLen <= 98) 
-	{
-		lexeme[lexLen++] = nextChar;
-		lexeme[lexLen] = 0;
-	}
-	else printf("Error - lexeme is too long \n");
+  if (lexLen <= 98) 
+  {
+    lexeme[lexLen++] = nextChar;
+    lexeme[lexLen] = 0;
+  }
+  else printf("Error - lexeme is too long \n");
 }
 //----------------------------------------------------------------------------------------------------
 void getChar()
 {
-	if ((nextChar = getc(in_fp)) != EOF) 
-	{
+  if ((nextChar = getc(in_fp)) != EOF) 
+  {
     if (isalpha(nextChar)) charClass = LETTER;
     else if (isdigit(nextChar)) charClass = DIGIT;
     else charClass = UNKNOWN;
