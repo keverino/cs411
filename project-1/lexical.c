@@ -100,61 +100,60 @@ void getChar()
 {
 	if ((nextChar = getc(in_fp)) != EOF) 
 	{
-               if (isalpha(nextChar))
-                   charClass = LETTER;
-               else if (isdigit(nextChar))
-                   charClass = DIGIT;
-               else charClass = UNKNOWN;
-           }
-           else
-               charClass = EOF;
-       }
-       // getNonBlank
-       void getNonBlank(){
-           while (isspace(nextChar))
-               getChar();
-       }
-       //lex
-       int lex(){
-           lexLen = 0;
-           getNonBlank();
-           switch (charClass){
-           case LETTER:
-                   addChar();
-                   getChar();
-                   while (charClass == LETTER || charClass ==                    DIGIT){
-                       addChar();
-                       getChar();
-                   }
-                   nextToken = IDENT;
-                   break;
-                   // parse ints lits
-               case DIGIT:
-                   addChar();
-                   getChar();
-                   while (charClass == DIGIT){
-                       addChar();
-                       getChar();
-                   }
-                   nextToken = INT_LIT;
-                   break;
+    if (isalpha(nextChar)) charClass = LETTER;
+    else if (isdigit(nextChar)) charClass = DIGIT;
+    else charClass = UNKNOWN;
+  }
+  else charClass = EOF;
+}
+//----------------------------------------------------------------------------------------------------
+void getNonBlank() { while (isspace(nextChar)) getChar(); }
+//----------------------------------------------------------------------------------------------------
+int lex()
+{
+  lexLen = 0;
+  getNonBlank();
+  switch (charClass)
+  {
+    case LETTER:
+      addChar();
+      getChar();
+      while (charClass == LETTER || charClass == DIGIT)
+      {
+        addChar();
+        getChar();
+      }
+      nextToken = IDENT;
+      break;
+                   
+    // parse ints lits
+    case DIGIT:
+      addChar();
+      getChar();
+      while (charClass == DIGIT)
+      {
+        addChar();
+        getChar();
+      }
+      nextToken = INT_LIT;
+      break;
 
-                //pares and ops
-               case UNKNOWN:
-                   lookup(nextChar);
-                   getChar();
-                   break;
+    // pares and ops
+    case UNKNOWN:
+      lookup(nextChar);
+      getChar();
+      break;
 
-                   //EOF
-               case EOF:
-                   nextToken = EOF;
-                   lexeme[0] = 'E';
-                   lexeme[1] = 'O';
-                   lexeme[2] = 'F';
-                   lexeme[3] = 0;
-                   break;
-           }
-        // end of switch
-           printf("Next token is: %d, next lexeme is %s\n", nextToken, lexeme);
-           return nextToken;
-       }
+    // end of file
+    case EOF:
+      nextToken = EOF;
+      lexeme[0] = 'E';
+      lexeme[1] = 'O';
+      lexeme[2] = 'F';
+      lexeme[3] = 0;
+      break;
+  }// end of switch
+  printf("Next token is: %d, next lexeme is %s\n", nextToken, lexeme);
+  return nextToken;
+}
+//----------------------------------------------------------------------------------------------------
