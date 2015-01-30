@@ -5,7 +5,7 @@
 #define FLOAT 2
 #include <stdio.h>
 #include <string.h>
-#include "y.tab.h"
+#include "testy.tab.h"
 
 struct
 {
