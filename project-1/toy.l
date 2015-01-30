@@ -1,8 +1,6 @@
 %{
 #define MAX_LENGTH 10
 #define MAX 100
-#define INT 1
-#define FLOAT 2
 #include <stdio.h>
 #include <string.h>
 #include "y.tab.h"
@@ -18,26 +16,40 @@ int t_index = 0;
 int t_flag = 0;
 %}
 
-letter 				[a-zA-Z]
-digit					[0-9]
-id 					{letter}({letter}|{digit})*
-number				{digit}+
-ws						[\t\n]	
+letter 			[a-zA-Z]
+digit				[0-9]
+id 				{letter}({letter}|{digit})*
+number			{digit}+
+ws					[ \t]+
+newline			[\n]
 
 %%
-{ws}				;
-
-int 				{t_flag=INT; printf("%s\n", yytext); return (t_INT);}
-float 				{t_flag=FLOAT; printf("%s\n", yytext); return (t_FLOAT);}
-
-"+"				{printf("%s\n", yytext); return (t_ADDOP);}
-"*"				{printf("%s\n", yytext); return (t_MULOP);}
-","				{printf("%s\n", yytext); return (t_COMMA);}
-";"				{printf("%s\n", yytext); return (t_SEMICOL);}
-"."				{printf("%s\n", yytext); return (t_DOT);}
-{number}			{printf("%s\n", yytext); return (t_NUM);}
-{id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id\n"); return(t_ID);}
-.					{printf("error!\n"); return (0);}
+{ws}				{printf("");}
+newline        {printf("\n");}
+boolean			{printf("boolean "); return (_boolean); }
+break				{printf("break "); return (_break);}
+class				{printf("class "); return (_class);}
+double			{printf("double "); return (_double);}
+else				{printf("else "); return (_else);}
+extends			{printf("extends "); return (_extends);}
+for 				{printf("for "); return (_for);}
+if 				{printf("if "); return (_if);}
+implements		{printf("implements "); return (_implements);}
+int 				{t_flag = _int; printf("int "); return (_int);}
+interface		{printf("interface "); return (_interface);}
+"+"				{printf("plus "); return (_plus);}
+"-"				{printf("minus "); return (_minus);}
+"*"				{printf("multiplication "); return (_multiplication);}
+","				{printf("comma "); return (_comma);}
+";"				{printf("semicolon "); return (_semicolon);}
+"."				{printf("%s", yytext); return (_period);}
+"("				{printf("leftparen "); return (_leftparen);}
+")"				{printf("rightparen "); return (_rightparen);}	
+"{"				{printf("leftbrace "); return (_leftbrace);}
+"}"				{printf("rightbrace "); return (_rightbrace);}
+{number}			{printf("intconstant "); return (_intconstant);}
+{id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
+.					{printf("\nError: '%s' not defined.\n", yytext); return (0);}
 
 %%
 int insert(char *s)
@@ -54,4 +66,7 @@ int insert(char *s)
 	t_index++;
 	return t_index-1;
 }
-int main() { yylex(); }
+int main() 
+{ 
+	while(1) yylex(); 
+}

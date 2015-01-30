@@ -35,7 +35,7 @@ float 			{t_flag=FLOAT; printf("float"); return (t_FLOAT);}
 ","				{printf("%s", yytext); return (t_COMMA);}
 ";"				{printf("%s", yytext); return (t_SEMICOL);}
 "."				{printf("%s", yytext); return (t_DOT);}
-"("				{printf("leftparen");}
+"("				{printf("leftparen"); }
 ")"				{printf("rightparen");}	
 "{"				{printf("leftbrace");}
 "}"				{printf("rightbrace");}
