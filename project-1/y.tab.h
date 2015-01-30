@@ -25,7 +25,7 @@
 #define _less             24
 #define _lessequal        25
 #define _greater          26
-#define _greaterqual      27
+#define _greaterequal     27
 #define _equal            28
 #define _notequal         29
 #define _and              30

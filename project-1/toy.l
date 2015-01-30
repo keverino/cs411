@@ -57,7 +57,7 @@ while				{printf("while" ); return (_while);}
 "/"				{printf("division "); return (_division);}
 "%"				{printf("mod "); return (_mod);}
 "<"				{printf("less "); return (_less);}
-"<="				{printf("lessqual "); return (_lessqual);}
+"<="				{printf("lessqual "); return (_lessequal);}
 ">"				{printf("greater "); return (_greater);}
 ">="				{printf("greaterequal "); return (_greaterequal);}
 "=="				{printf("equal "); return (_equal);}
@@ -73,6 +73,7 @@ while				{printf("while" ); return (_while);}
 ")"				{printf("rightparen "); return (_rightparen);}	
 "{"				{printf("leftbrace "); return (_leftbrace);}
 "}"				{printf("rightbrace "); return (_rightbrace);}
+
 
 {number}			{printf("number ");}
 {id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
