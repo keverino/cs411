@@ -23,13 +23,14 @@ id 					{letter}({letter}|{digit})*
 number				{digit}+
 ws						[ \t]+
 newline				[\n]
-%x BLOCKCOMMENT
+%x BLOCKCOMMENT			
 
 %%
 
 "/*"						{BEGIN(BLOCKCOMMENT);}
 <BLOCKCOMMENT>"*/"	{BEGIN(INITIAL);}
 <BLOCKCOMMENT>.		{}
+"//"[^\n]*				{}
 
 {ws}				{}
 newline        {printf("\n");}
@@ -78,7 +79,7 @@ while				{printf("while" ); return (_while);}
 
 {number}			{printf("number ");}
 {id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
-.					{printf("error "); return (0);}
+.					{printf("error!\n"); return (0);}
 
 %%
 
