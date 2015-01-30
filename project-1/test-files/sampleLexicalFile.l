@@ -18,24 +18,30 @@ int t_index = 0;
 int t_flag = 0;
 %}
 
-letter 				[a-zA-Z]
+letter 			[a-zA-Z]
 digit				[0-9]
 id 				{letter}({letter}|{digit})*
-number				{digit}+
-ws				[\t\n]	
+number			{digit}+
+ws					[ \t]+
+newline			[\n]
 
 %%
-{ws}				;
-int 				{t_flag=INT; printf("%s\n", yytext); return (t_INT);}
-float 				{t_flag=FLOAT; printf("%s\n", yytext); return (t_FLOAT);}
-"+"				{printf("%s\n", yytext); return (t_ADDOP);}
-"*"				{printf("%s\n", yytext); return (t_MULOP);}
-","				{printf("%s\n", yytext); return (t_COMMA);}
-";"				{printf("%s\n", yytext); return (t_SEMICOL);}
-"."				{printf("%s\n", yytext); return (t_DOT);}
-{number}			{printf("%s\n", yytext); return (t_NUM);}
-{id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("%s\n", yytext); return(t_ID);}
-.				{printf("error!\n"); return (0);}
+{ws}				{printf(" ");}
+newline        {printf("\n");}
+int 				{t_flag=INT; printf("int"); return (t_INT);}
+float 			{t_flag=FLOAT; printf("float"); return (t_FLOAT);}
+"+"				{printf("%s", yytext); return (t_ADDOP);}
+"*"				{printf("%s", yytext); return (t_MULOP);}
+","				{printf("%s", yytext); return (t_COMMA);}
+";"				{printf("%s", yytext); return (t_SEMICOL);}
+"."				{printf("%s", yytext); return (t_DOT);}
+"("				{printf("leftparen");}
+")"				{printf("rightparen");}	
+"{"				{printf("leftbrace");}
+"}"				{printf("rightbrace");}
+{number}			{printf("number"); return (t_NUM);}
+{id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id"); return(t_ID);}
+.					{printf("error!\n"); return (0);}
 
 %%
 int insert(char *s)
@@ -52,4 +58,7 @@ int insert(char *s)
 	t_index++;
 	return t_index-1;
 }
-int main() { yylex(); }
+int main() 
+{ 
+	while(1) yylex(); 
+}
