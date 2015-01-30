@@ -1,4 +1,5 @@
-%{
+%{// Using this file to test changes before adding it to toy.l
+
 #define MAX_LENGTH 10
 #define MAX 100
 #include <stdio.h>
