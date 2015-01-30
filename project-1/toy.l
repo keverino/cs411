@@ -30,8 +30,9 @@ newline				[\n]
 <BLOCKCOMMENT>"*/"	{BEGIN(INITIAL);}
 <BLOCKCOMMENT>.		{}
 
-{ws}				{printf("");}
+{ws}				{}
 newline        {printf("\n");}
+
 boolean			{printf("boolean "); return (_boolean); }
 break				{printf("break "); return (_break);}
 class				{printf("class "); return (_class);}
@@ -43,17 +44,37 @@ if 				{printf("if "); return (_if);}
 implements		{printf("implements "); return (_implements);}
 int 				{t_flag = _int; printf("int "); return (_int);}
 interface		{printf("interface "); return (_interface);}
+
+"println"		{}
+"readln"			{}
+return			{printf("return "); return (_return);}
+string			{printf("string "); return (_string);}
+void				{printf("void "); return (_void);}
+while				{printf("while" ); return (_while);}
 "+"				{printf("plus "); return (_plus);}
 "-"				{printf("minus "); return (_minus);}
 "*"				{printf("multiplication "); return (_multiplication);}
-","				{printf("comma "); return (_comma);}
+"/"				{printf("division "); return (_division);}
+"%"				{printf("mod "); return (_mod);}
+"<"				{printf("less "); return (_less);}
+"<="				{printf("lessqual "); return (_lessqual);}
+">"				{printf("greater "); return (_greater);}
+">="				{printf("greaterequal "); return (_greaterequal);}
+"=="				{printf("equal "); return (_equal);}
+"!="				{printf("notequal "); return (_notequal);}
+"&&"				{printf("and "); return (_and);}
+"||"				{printf("or "); return (_or);}
+"!"				{printf("not "); return (_not);}
+"="				{printf("assignop "); return (_assignop);}
 ";"				{printf("semicolon "); return (_semicolon);}
-"."				{printf("%s", yytext); return (_period);}
+","				{printf("comma "); return (_comma);}
+"."				{printf("period"); return (_period);}
 "("				{printf("leftparen "); return (_leftparen);}
 ")"				{printf("rightparen "); return (_rightparen);}	
 "{"				{printf("leftbrace "); return (_leftbrace);}
 "}"				{printf("rightbrace "); return (_rightbrace);}
-{number}			{printf("intconstant "); return (_intconstant);}
+
+{number}			{printf("number ");}
 {id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
 .					{printf("error "); return (0);}
 
