@@ -24,14 +24,13 @@ doubleConst			{digit}+\.{digit}+
 intConst				{digit}+
 ws						[ \t]+
 newline				[\n]
-%x BLOCKCOMMENT			
+blockComment		"/*"(.|\n)"*/"	
+lineComment			"//"[^\n]*[\n]
 
 %%
 
-"/*"							{BEGIN(BLOCKCOMMENT);}
-<BLOCKCOMMENT>"*/"[\n*]	{BEGIN(INITIAL);}
-<BLOCKCOMMENT>.			{}
-"//"[^\n]*[\n]				{}
+blockComment		{}
+lineComment			{}
 
 {ws}					{}
 newline				{printf("\n");}
