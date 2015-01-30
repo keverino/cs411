@@ -18,39 +18,39 @@ int t_flag = 0;
 %}
 
 letter 				[a-zA-Z]
-digit					[0-9]
-id 					{letter}({letter}|{digit})*
+digit				[0-9]
+id 				{letter}({letter}|{digit})*
 number				{digit}+
-ws						[ \t]+
+ws				[ \t]+
 newline				[\n]
 %x BLOCKCOMMENT			
 
 %%
 
-"/*"						{BEGIN(BLOCKCOMMENT);}
-<BLOCKCOMMENT>"*/"	{BEGIN(INITIAL);}
-<BLOCKCOMMENT>.		{}
-"//"[^\n]*				{}
+"/*"				{BEGIN(BLOCKCOMMENT);}
+<BLOCKCOMMENT>"*/"		{BEGIN(INITIAL);}
+<BLOCKCOMMENT>.			{}
+"//"[^\n]*			{}
 
 {ws}				{}
-newline        {printf("\n");}
+newline				{printf("\n");}
 
-boolean			{printf("boolean "); return (_boolean); }
+boolean				{printf("boolean "); return (_boolean); }
 break				{printf("break "); return (_break);}
 class				{printf("class "); return (_class);}
-double			{printf("double "); return (_double);}
+double				{printf("double "); return (_double);}
 else				{printf("else "); return (_else);}
-extends			{printf("extends "); return (_extends);}
+extends				{printf("extends "); return (_extends);}
 for 				{printf("for "); return (_for);}
 if 				{printf("if "); return (_if);}
-implements		{printf("implements "); return (_implements);}
+implements			{printf("implements "); return (_implements);}
 int 				{t_flag = _int; printf("int "); return (_int);}
-interface		{printf("interface "); return (_interface);}
+interface			{printf("interface "); return (_interface);}
 
-"println"		{}
+"println"			{}
 "readln"			{}
-return			{printf("return "); return (_return);}
-string			{printf("string "); return (_string);}
+return				{printf("return "); return (_return);}
+string				{printf("string "); return (_string);}
 void				{printf("void "); return (_void);}
 while				{printf("while" ); return (_while);}
 "+"				{printf("plus "); return (_plus);}
@@ -79,7 +79,7 @@ while				{printf("while" ); return (_while);}
 
 {number}			{printf("number ");}
 {id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
-.					{printf("error!\n"); return (0);}
+.				{printf("error!\n"); return (0);}
 
 %%
 
