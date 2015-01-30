@@ -18,10 +18,10 @@ int t_flag = 0;
 %}
 
 letter 				[a-zA-Z]
-digit				[0-9]
-id 				{letter}({letter}|{digit})*
+digit					[0-9]
+id 					{letter}({letter}|{digit})*
 number				{digit}+
-ws				[ \t]+
+ws						[ \t]+
 newline				[\n]
 %x BLOCKCOMMENT			
 
