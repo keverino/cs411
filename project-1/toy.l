@@ -16,14 +16,20 @@ int t_index = 0;
 int t_flag = 0;
 %}
 
-letter 			[a-zA-Z]
-digit				[0-9]
-id 				{letter}({letter}|{digit})*
-number			{digit}+
-ws					[ \t]+
-newline			[\n]
+letter 				[a-zA-Z]
+digit					[0-9]
+id 					{letter}({letter}|{digit})*
+number				{digit}+
+ws						[ \t]+
+newline				[\n]
+%x BLOCKCOMMENT
 
 %%
+
+"/*"						{BEGIN(BLOCKCOMMENT);}
+<BLOCKCOMMENT>"*/"	{BEGIN(INITIAL);}
+<BLOCKCOMMENT>.		{}
+
 {ws}				{printf("");}
 newline        {printf("\n");}
 boolean			{printf("boolean "); return (_boolean); }
@@ -49,7 +55,7 @@ interface		{printf("interface "); return (_interface);}
 "}"				{printf("rightbrace "); return (_rightbrace);}
 {number}			{printf("intconstant "); return (_intconstant);}
 {id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
-.					{printf("\nError: '%s' not defined.\n", yytext); return (0);}
+.					{printf("error "); return (0);}
 
 %%
 int insert(char *s)
