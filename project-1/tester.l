@@ -1,4 +1,6 @@
-%{// Using this file to test changes before adding it to toy.l
+%{
+// Use this file to test changes before adding it to toy.l
+// This file will take inputs from console, rather than reading from a .txt file
 
 #define MAX_LENGTH 10
 #define MAX 100
