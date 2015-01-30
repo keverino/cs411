@@ -539,6 +539,7 @@ char *yytext;
 #define MAX 100
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "y.tab.h"
 
 struct
@@ -551,7 +552,7 @@ table[MAX];
 int t_index = 0;
 int t_flag = 0;
 
-#line 555 "lex.yy.c"
+#line 556 "lex.yy.c"
 
 #define INITIAL 0
 #define BLOCKCOMMENT 1
@@ -734,10 +735,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 27 "toy.l"
+#line 28 "toy.l"
 
 
-#line 741 "lex.yy.c"
+#line 742 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -822,245 +823,245 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 29 "toy.l"
+#line 30 "toy.l"
 {BEGIN(BLOCKCOMMENT);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 30 "toy.l"
+#line 31 "toy.l"
 {BEGIN(INITIAL);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 31 "toy.l"
+#line 32 "toy.l"
 {}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 33 "toy.l"
+#line 34 "toy.l"
 {}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 34 "toy.l"
+#line 35 "toy.l"
 {printf("\n");}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 36 "toy.l"
+#line 37 "toy.l"
 {printf("boolean "); return (_boolean); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 37 "toy.l"
+#line 38 "toy.l"
 {printf("break "); return (_break);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 38 "toy.l"
+#line 39 "toy.l"
 {printf("class "); return (_class);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 39 "toy.l"
+#line 40 "toy.l"
 {printf("double "); return (_double);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 40 "toy.l"
+#line 41 "toy.l"
 {printf("else "); return (_else);}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 41 "toy.l"
+#line 42 "toy.l"
 {printf("extends "); return (_extends);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 42 "toy.l"
+#line 43 "toy.l"
 {printf("for "); return (_for);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 43 "toy.l"
+#line 44 "toy.l"
 {printf("if "); return (_if);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 44 "toy.l"
+#line 45 "toy.l"
 {printf("implements "); return (_implements);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 45 "toy.l"
+#line 46 "toy.l"
 {t_flag = _int; printf("int "); return (_int);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 46 "toy.l"
+#line 47 "toy.l"
 {printf("interface "); return (_interface);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 48 "toy.l"
+#line 49 "toy.l"
 {}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 49 "toy.l"
+#line 50 "toy.l"
 {}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 50 "toy.l"
+#line 51 "toy.l"
 {printf("return "); return (_return);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 51 "toy.l"
+#line 52 "toy.l"
 {printf("string "); return (_string);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 52 "toy.l"
+#line 53 "toy.l"
 {printf("void "); return (_void);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 53 "toy.l"
+#line 54 "toy.l"
 {printf("while" ); return (_while);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 54 "toy.l"
+#line 55 "toy.l"
 {printf("plus "); return (_plus);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 55 "toy.l"
+#line 56 "toy.l"
 {printf("minus "); return (_minus);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 56 "toy.l"
+#line 57 "toy.l"
 {printf("multiplication "); return (_multiplication);}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 57 "toy.l"
+#line 58 "toy.l"
 {printf("division "); return (_division);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 58 "toy.l"
+#line 59 "toy.l"
 {printf("mod "); return (_mod);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 59 "toy.l"
+#line 60 "toy.l"
 {printf("less "); return (_less);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 60 "toy.l"
+#line 61 "toy.l"
 {printf("lessqual "); return (_lessequal);}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 61 "toy.l"
+#line 62 "toy.l"
 {printf("greater "); return (_greater);}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 62 "toy.l"
+#line 63 "toy.l"
 {printf("greaterequal "); return (_greaterequal);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 63 "toy.l"
+#line 64 "toy.l"
 {printf("equal "); return (_equal);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 64 "toy.l"
+#line 65 "toy.l"
 {printf("notequal "); return (_notequal);}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 65 "toy.l"
+#line 66 "toy.l"
 {printf("and "); return (_and);}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 66 "toy.l"
+#line 67 "toy.l"
 {printf("or "); return (_or);}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 67 "toy.l"
+#line 68 "toy.l"
 {printf("not "); return (_not);}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 68 "toy.l"
+#line 69 "toy.l"
 {printf("assignop "); return (_assignop);}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 69 "toy.l"
+#line 70 "toy.l"
 {printf("semicolon "); return (_semicolon);}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 70 "toy.l"
+#line 71 "toy.l"
 {printf("comma "); return (_comma);}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 71 "toy.l"
+#line 72 "toy.l"
 {printf("period"); return (_period);}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 72 "toy.l"
+#line 73 "toy.l"
 {printf("leftparen "); return (_leftparen);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 73 "toy.l"
+#line 74 "toy.l"
 {printf("rightparen "); return (_rightparen);}	
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 74 "toy.l"
+#line 75 "toy.l"
 {printf("leftbrace "); return (_leftbrace);}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 75 "toy.l"
+#line 76 "toy.l"
 {printf("rightbrace "); return (_rightbrace);}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 78 "toy.l"
+#line 79 "toy.l"
 {printf("number ");}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 79 "toy.l"
+#line 80 "toy.l"
 {yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 80 "toy.l"
+#line 81 "toy.l"
 {printf("error "); return (0);}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 82 "toy.l"
+#line 83 "toy.l"
 ECHO;
 	YY_BREAK
-#line 1064 "lex.yy.c"
+#line 1065 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(BLOCKCOMMENT):
 	yyterminate();
@@ -2058,7 +2059,8 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 82 "toy.l"
+#line 83 "toy.l"
+
 
 
 int insert(char *s)
@@ -2074,9 +2076,40 @@ int insert(char *s)
 	table[t_index].type = t_flag;
 	t_index++;
 	return t_index-1;
-}
-int main() 
+}//end of insert
+
+int main(int argc, char *argv[]) 
 { 
-	while(1) yylex(); 
-}
+	//FILE *fp = NULL;
+	//char line[100];
+
+	//check for cmd/terminal arguments
+	if(argc != 2)
+	{
+		printf("ERROR: you must specify a text file to read from!\n");
+		return 1;
+	}
+	
+	//read the file
+	yyin = fopen(argv[1], "r");
+	while( yylex() );
+	/*//open file
+	fp = fopen(argv[1], "r");
+	if(fp == NULL)
+	{
+		perror("Could not open file.");
+		return 1;
+	}
+
+	//try to read from file
+	while(!feof (fp))
+	{
+		if(fgets(line, sizeof (line), fp))
+		{
+			printf("%s", line);
+		}
+	}*/
+
+			//yylex(); 
+}//end of main
 

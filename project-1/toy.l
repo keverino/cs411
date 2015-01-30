@@ -3,6 +3,7 @@
 #define MAX 100
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "y.tab.h"
 
 struct
@@ -80,6 +81,7 @@ while				{printf("while" ); return (_while);}
 .					{printf("error "); return (0);}
 
 %%
+
 int insert(char *s)
 {
 	int i = 0;
@@ -93,8 +95,18 @@ int insert(char *s)
 	table[t_index].type = t_flag;
 	t_index++;
 	return t_index-1;
-}
-int main() 
+}//end of insert
+
+int main(int argc, char *argv[]) 
 { 
-	while(1) yylex(); 
-}
+	//check for cmd/terminal arguments
+	if(argc != 2)
+	{
+		printf("ERROR: you must specify a text file to read from!\n");
+		return 1;
+	}
+	
+	//read the file
+	yyin = fopen(argv[1], "r");
+	while( yylex() );
+}//end of main
