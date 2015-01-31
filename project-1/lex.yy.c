@@ -878,217 +878,217 @@ YY_RULE_SETUP
 case 5:
 YY_RULE_SETUP
 #line 37 "toy.l"
-{printf("boolean "); 				return (_boolean); }
+{printf("boolean "); 		return (_boolean); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 38 "toy.l"
-{printf("break ");				 	return (_break);}
+{printf("break ");		return (_break);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 39 "toy.l"
-{printf("class ");				 	return (_class);}
+{printf("class ");		return (_class);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 40 "toy.l"
-{printf("double "); 					return (_double);}
+{printf("double "); 		return (_double);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 41 "toy.l"
-{printf("else "); 					return (_else);}
+{printf("else "); 		return (_else);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 42 "toy.l"
-{printf("extends "); 				return (_extends);}
+{printf("extends "); 		return (_extends);}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 43 "toy.l"
-{printf("for "); 						return (_for);}
+{printf("for "); 		return (_for);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 44 "toy.l"
-{printf("if "); 						return (_if);}
+{printf("if "); 		return (_if);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 45 "toy.l"
-{printf("implements "); 			return (_implements);}
+{printf("implements "); 	return (_implements);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 46 "toy.l"
-{t_flag = _int; printf("int "); 	return (_int);}
+{t_flag = _int; printf("int "); return (_int);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 47 "toy.l"
-{printf("interface "); 				return (_interface);}
+{printf("interface "); 		return (_interface);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 48 "toy.l"
-{printf("newarray ");				return (_newarray);}
+{printf("newarray ");		return (_newarray);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 49 "toy.l"
-{printf("println "); return (_println);}
+{printf("println "); 		return (_println);}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 50 "toy.l"
-{printf("readln "); return (_readln);}
+{printf("readln "); 		return (_readln);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 51 "toy.l"
-{printf("return "); 					return (_return);}
+{printf("return "); 		return (_return);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 52 "toy.l"
-{printf("string "); 					return (_string);}
+{printf("string "); 		return (_string);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 53 "toy.l"
-{printf("void "); 					return (_void);}
+{printf("void "); 		return (_void);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 54 "toy.l"
-{printf("while "); 					return (_while);}
+{printf("while "); 		return (_while);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 55 "toy.l"
-{printf("plus "); 					return (_plus);}
+{printf("plus "); 		return (_plus);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 56 "toy.l"
-{printf("minus "); 					return (_minus);}
+{printf("minus "); 		return (_minus);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 57 "toy.l"
-{printf("multiplication "); 		return (_multiplication);}
+{printf("multiplication "); 	return (_multiplication);}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 58 "toy.l"
-{printf("division "); 				return (_division);}
+{printf("division "); 		return (_division);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 59 "toy.l"
-{printf("mod "); 						return (_mod);}
+{printf("mod "); 		return (_mod);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
 #line 60 "toy.l"
-{printf("less "); 					return (_less);}
+{printf("less "); 		return (_less);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 61 "toy.l"
-{printf("lessqual ");				return (_lessequal);}
+{printf("lessqual ");		return (_lessequal);}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 62 "toy.l"
-{printf("greater "); 				return (_greater);}
+{printf("greater "); 		return (_greater);}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 63 "toy.l"
-{printf("greaterequal "); 			return (_greaterequal);}
+{printf("greaterequal "); 	return (_greaterequal);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 64 "toy.l"
-{printf("equal "); 					return (_equal);}
+{printf("equal "); 		return (_equal);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 65 "toy.l"
-{printf("notequal "); 				return (_notequal);}
+{printf("notequal "); 		return (_notequal);}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 66 "toy.l"
-{printf("and "); 						return (_and);}
+{printf("and "); 		return (_and);}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
 #line 67 "toy.l"
-{printf("or "); 						return (_or);}
+{printf("or "); 		return (_or);}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
 #line 68 "toy.l"
-{printf("not "); 						return (_not);}
+{printf("not "); 		return (_not);}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 69 "toy.l"
-{printf("assignop "); 				return (_assignop);}
+{printf("assignop "); 		return (_assignop);}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 70 "toy.l"
-{printf("semicolon "); 				return (_semicolon);}
+{printf("semicolon "); 		return (_semicolon);}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 71 "toy.l"
-{printf("comma "); 					return (_comma);}
+{printf("comma "); 		return (_comma);}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 72 "toy.l"
-{printf("period"); 					return (_period);}
+{printf("period"); 		return (_period);}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 73 "toy.l"
-{printf("leftparen ");				return (_leftparen);}
+{printf("leftparen ");		return (_leftparen);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 74 "toy.l"
-{printf("rightparen "); 			return (_rightparen);}	
+{printf("rightparen "); 	return (_rightparen);}	
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
 #line 75 "toy.l"
-{printf("leftbrace "); 				return (_leftbrace);}
+{printf("leftbrace "); 		return (_leftbrace);}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
 #line 76 "toy.l"
-{printf("rightbrace "); 			return (_rightbrace);}
+{printf("rightbrace "); 	return (_rightbrace);}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
 #line 78 "toy.l"
-{printf("doubleconstant "); 		return (_doubleconstant);}
+{printf("doubleconstant "); 	return (_doubleconstant);}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
 #line 79 "toy.l"
-{printf("stringconstant ");		return (_stringconstant);}
+{printf("stringconstant ");	return (_stringconstant);}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 80 "toy.l"
-{printf("intconstant "); 			return (_intconstant);}
+{printf("intconstant "); 	return (_intconstant);}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
@@ -1098,7 +1098,7 @@ YY_RULE_SETUP
 case 49:
 YY_RULE_SETUP
 #line 82 "toy.l"
-{printf("error!\n"); 				return (0);}
+{printf("error!\n"); 		return (0);}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
