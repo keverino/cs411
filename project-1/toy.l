@@ -26,6 +26,7 @@ ws				[ \t]+
 newline				[\n]
 stringConst			"\""({letter}*|{digit}*|[ ]*|"!"*)*"\""
 boolConst			(true|false)+
+newArray			(\[\]|\[[0-9]+\])+
 
 %%
 
@@ -46,7 +47,7 @@ if 				{printf("if "); 		return (_if);}
 implements			{printf("implements "); 	return (_implements);}
 int 				{t_flag = _int; printf("int "); return (_int);}
 interface			{printf("interface "); 		return (_interface);}
-"[]"				{printf("newarray ");		return (_newarray);}
+{newArray}			{printf("newarray ");		return (_newarray);}
 "println"			{printf("println "); 		return (_println);}
 "readln"			{printf("readln "); 		return (_readln);}
 return				{printf("return "); 		return (_return);}
@@ -75,7 +76,6 @@ while				{printf("while "); 		return (_while);}
 ")"				{printf("rightparen "); 	return (_rightparen);}	
 "{"				{printf("leftbrace "); 		return (_leftbrace);}
 "}"				{printf("rightbrace "); 	return (_rightbrace);}
-
 {doubleConst}			{printf("doubleconstant "); 	return (_doubleconstant);}
 {stringConst}			{printf("stringconstant ");	return (_stringconstant);}
 {intConst}			{printf("intconstant "); 	return (_intconstant);}

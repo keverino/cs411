@@ -21,7 +21,7 @@ class omg
    double funny;
    boolean flag;
    string s;
-   int [] a;
+   int [100] a;
    flag = true;
    Funny = 0X89aB; funny = 123456E+7;
    s = "hello world";
