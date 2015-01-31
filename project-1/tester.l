@@ -26,13 +26,12 @@ id 					{letter}({letter}|{digit})*
 doubleConst			{digit}+\.{digit}+
 intConst				{digit}+
 ws						[ \t]+
-newline				[\n]
-%x BLOCKCOMMENT			
+newline				[\n]		
 
 %%
 
-"/*"(.|\n)"*/"		{}
-"//"[^\n]*[\n]		{}
+"/*"((\*+[^/*])|([^*]))*\**"*/"[\n] 	{}
+"//"[^\n]*[\n]				{}
 
 {ws}					{}
 newline				{printf("\n");}
