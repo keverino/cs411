@@ -31,10 +31,8 @@ newline				[\n]
 
 %%
 
-"/*"							{BEGIN(BLOCKCOMMENT);}
-<BLOCKCOMMENT>"*/"		{BEGIN(INITIAL);}
-<BLOCKCOMMENT>.			{}
-"//"[^\n]*					{}
+"/*"(.|\n)"*/"		{}
+"//"[^\n]*[\n]		{}
 
 {ws}					{}
 newline				{printf("\n");}
