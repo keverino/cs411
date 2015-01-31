@@ -20,7 +20,7 @@ int t_flag = 0;
 letter 				[a-zA-Z]
 digit				[0-9]
 id 				{letter}({letter}|{digit})*
-doubleConst			{digit}+\.{digit}+
+doubleConst			({digit}+\.{digit}+|{digit}+\.{digit}+[eE]\+[0-9]+)
 intConst			({digit}+|0[xX][0-9a-fA-F]+|{digit}+[eE]\+[0-9]+)
 ws				[ \t]+
 newline				[\n]+
