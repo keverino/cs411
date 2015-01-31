@@ -28,6 +28,7 @@ intConst			({digit}+|0[xX][0-9a-fA-F]+|{digit}+[eE]\+[0-9]+)
 ws				[ \t]+
 newline				[\n]
 stringConst			"\""({letter}*|{digit}*|[ ]*|"!"*)*"\""	
+boolConst			(true|false)+
 
 %%
 
@@ -81,6 +82,7 @@ while				{printf("while "); 		return (_while);}
 {doubleConst}			{printf("doubleconstant "); 	return (_doubleconstant);}
 {stringConst}			{printf("stringconstant ");	return (_stringconstant);}
 {intConst}			{printf("intconstant "); 	return (_intconstant);}
+{boolConst}			{printf("booleanconstant ");	return (_booleanconstant);}
 {id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
 .				{printf("error!\n"); 		return (0);}
 
