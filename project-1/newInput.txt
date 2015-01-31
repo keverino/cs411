@@ -1,12 +1,13 @@
-int fact (int x) {
+int fact (int x) 
+{
    // recursive factorial function
    if (x>1) return x * fact(x-1);
    else return 1;
 }
-void main () {
-/* Winter Quarter 2015
-CS 411 project #1
-A lexical analyzer */
+void main () 
+{
+/* huehuehuehuehuehue
+huehuehuehuehuehuehue */
    int x;
    int total;
    println ("factorial of 10 is ", fact (10), " from the recursive function");
@@ -14,7 +15,8 @@ A lexical analyzer */
    for ( ; x<=10; ) { total = total * x; x = x + 1; }
    println ("iterative result of 10! is ", total);
 }
-class cs411 {
+class omg 
+{
    int Funny;
    double funny;
    boolean flag;
