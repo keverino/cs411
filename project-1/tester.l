@@ -83,7 +83,7 @@ while				{printf("while "); 		return (_while);}
 {stringConst}			{printf("stringconstant ");	return (_stringconstant);}
 {intConst}			{printf("intconstant "); 	return (_intconstant);}
 {boolConst}			{printf("booleanconstant ");	return (_booleanconstant);}
-{id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("id "); return(_id);}
+{id}				{yytext[yyleng]='\0'; yylval=insert(yytext); printf("yyext: %s, yyleng: %d", yytext, yyleng); return(_id);}
 .				{printf("error!\n"); 		return (0);}
 
 
