@@ -27,7 +27,7 @@ doubleConst			{digit}+\.{digit}+
 intConst			({digit}+|0[xX][0-9a-fA-F]+|{digit}+[eE]\+[0-9]+)
 ws				[ \t]+
 newline				[\n]*
-stringConst			"\""({letter}*|{digit}*|[ ]*|"!"*)*"\""	
+stringConst			"\""([^\"]*)*"\""
 boolConst			(true|false)+
 newArray			(\[\]|\[[0-9]+\])+
 
