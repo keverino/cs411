@@ -24,13 +24,11 @@ doubleConst			{digit}+\.{digit}+
 intConst				{digit}+
 ws						[ \t]+
 newline				[\n]
-blockComment		"/*"(.|\n)"*/"	
-lineComment			"//"[^\n]*[\n]
 
 %%
 
-blockComment		{}
-lineComment			{}
+"/*"(.|\n)"*/"		{}
+"//"[^\n]*[\n]		{}
 
 {ws}					{}
 newline				{printf("\n");}
