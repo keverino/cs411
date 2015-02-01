@@ -59,36 +59,36 @@ string      { printf("%s ", yytext); insert(yytext); return (t_string); }
 void        { printf("%s ", yytext); insert(yytext); return (t_void); } 
 while       { printf("%s ", yytext); insert(yytext); return (t_while); }
 true|false  { printf("boolconstant "); 		return(t_boolconstant); } 
-"+"         { printf("plus "); 					return(t_plus); }
-"-"         { printf("minus "); 					return(t_minus); }
-"*"         { printf("multiplication "); 		return(t_multiplication); }
-"/"         { printf("division "); 				return(t_division); }
-"%"			{ printf("mod "); 					return(t_mod);}
-"<="        { printf("lessequal "); 			return(t_lessequal); }
-">"         { printf("greater "); 				return(t_greater); }
+"+"         { printf("plus "); 			return(t_plus); }
+"-"         { printf("minus "); 		return(t_minus); }
+"*"         { printf("multiplication "); 	return(t_multiplication); }
+"/"         { printf("division "); 		return(t_division); }
+"%"	    { printf("mod ");			return(t_mod);}
+"<="        { printf("lessequal "); 		return(t_lessequal); }
+">"         { printf("greater "); 		return(t_greater); }
 ">="        { printf("greaterequal "); 		return(t_greaterequal); }
-"=="        { printf("equal "); 					return(t_equal); }
-"!="        { printf("notequal "); 				return(t_notequal); }
-"&&"			{ printf("and "); 					return(t_and);}
-"||"			{ printf("or "); 						return(t_or);}
-"!"			{ printf("not "); 					return(t_not);}
-"="         { printf("assignop "); 				return(t_assignop); }
-";"         { printf("semicolon "); 			return(t_semicolon); }
-","         { printf("comma "); 					return(t_comma); }
-"."         { printf("period "); 				return(t_period); }
-"("         { printf("leftparen "); 			return(t_leftparen); }
-")"         { printf("rightparen "); 			return(t_rightparen); }
-"["         { printf("leftbracket "); 			return(t_leftbracket); }
-"]"         { printf("rightbracket ");			return(t_rightbracket); }
-"{"         { printf("leftbrace "); 			return(t_leftbrace); }
-"}"         { printf("rightbrace "); 			return(t_rightbrace); }
-{newline}	{ printf("\n"); }
-{intConst}	{ printf("intconstant "); 			return(t_intconstant); }
-{doubConst}	{ printf("doubleconstant "); 		return(t_doubleconstant); }
-{strConst}	{ printf("stringconstant "); 		return(t_stringconstant); }
-{id}			{ printf("id "); insert(yytext); return(t_id); }
-{ws}			{; /* ignore whitespace */ }
-. 				{; }
+"=="        { printf("equal "); 		return(t_equal); }
+"!="        { printf("notequal "); 		return(t_notequal); }
+"&&"	    { printf("and "); 			return(t_and);}
+"||"	    { printf("or "); 			return(t_or);}
+"!"	    { printf("not "); 			return(t_not);}
+"="         { printf("assignop "); 		return(t_assignop); }
+";"         { printf("semicolon "); 		return(t_semicolon); }
+","         { printf("comma "); 		return(t_comma); }
+"."         { printf("period "); 		return(t_period); }
+"("         { printf("leftparen "); 		return(t_leftparen); }
+")"         { printf("rightparen "); 		return(t_rightparen); }
+"["         { printf("leftbracket "); 		return(t_leftbracket); }
+"]"         { printf("rightbracket ");		return(t_rightbracket); }
+"{"         { printf("leftbrace "); 		return(t_leftbrace); }
+"}"         { printf("rightbrace "); 		return(t_rightbrace); }
+{newline}   { printf("\n"); }
+{intConst}  { printf("intconstant "); 		return(t_intconstant); }
+{doubConst} { printf("doubleconstant "); 	return(t_doubleconstant); }
+{strConst}  { printf("stringconstant "); 	return(t_stringconstant); }
+{id}   	    { printf("id "); insert(yytext);	return(t_id); }
+{ws}	    {; }
+. 	    {; }
 
 %%
 
