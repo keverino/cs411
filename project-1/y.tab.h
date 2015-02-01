@@ -1,50 +1,50 @@
-//Token codes
-#define _boolean          1
-#define _break            2
-#define _class            3
-#define _double           4
-#define _else             5
-#define _extends          6
-#define _for              7
-#define _if               8
-#define _implements       9
-#define _int              10
-#define _interface        11
-#define _newarray         12
-#define _println          13
-#define _readln           14
-#define _return           15
-#define _string           16
-#define _void             17
-#define _while            18
-#define _plus             19
-#define _minus            20
-#define _multiplication   21
-#define _division         22
-#define _mod              23
-#define _less             24
-#define _lessequal        25
-#define _greater          26
-#define _greaterequal     27
-#define _equal            28
-#define _notequal         29
-#define _and              30
-#define _or               31
-#define _not              32
-#define _assignop         33
-#define _semicolon        34
-#define _comma            35
-#define _period           36
-#define _leftparen        37
-#define _rightparen       38
-#define _leftbracket      39
-#define _rightbracket     40
-#define _leftbrace        41
-#define _rightbrace       42
-#define _intconstant      43
-#define _doubleconstant   44
-#define _stringconstant   45
-#define _booleanconstant  46
-#define _id               47
+  int yylval;
 
-int yylval;
+  // Tokens
+  #define t_bool            1000
+  #define t_break           1001
+  #define t_class           1002
+  #define t_double          1003
+  #define t_else            1004
+  #define t_extends         1005
+  #define t_for             1006
+  #define t_if              1007
+  #define t_implements      1008
+  #define t_int             1009
+  #define t_interface       1010
+  #define t_newarray        1011
+  #define t_println         1012
+  #define t_readln          1013
+  #define t_return          1014
+  #define t_string          1015
+  #define t_void            1016
+  #define t_while           1017
+  #define t_plus            1018
+  #define t_minus           1019
+  #define t_multiplication  1020
+  #define t_division        1021
+  #define t_mod             1022
+  #define t_less            1023
+  #define t_lessequal       1024
+  #define t_greater         1025
+  #define t_greaterequal    1026
+  #define t_equal           1027
+  #define t_notequal        1028
+  #define t_and				 1044
+  #define t_or 				 1045
+  #define t_not 				 1046
+  #define t_assignop        1029  
+  #define t_semicolon       1030  
+  #define t_comma           1031
+  #define t_period          1032
+  #define t_leftparen       1033
+  #define t_rightparen      1034
+  #define t_leftbracket     1035
+  #define t_rightbracket    1036
+  #define t_leftbrace       1037
+  #define t_rightbrace      1038
+  #define t_boolconstant    1039
+  #define t_intconstant     1040
+  #define t_doubleconstant  1041
+  #define t_stringconstant  1042
+  #define t_id              1043

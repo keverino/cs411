@@ -1,5 +1,4 @@
-/* a couple of 
-test cases */
+/* a couple of test cases */
 class winter2015cs411 implements sleep
 {
    //test boolean
@@ -11,6 +10,8 @@ class winter2015cs411 implements sleep
    char [10] characters;
    characters = "herpaderp";
    int [] integers;
+
+	if ( year % 400 == 0)
 
    //test doubles
    double doubleh = 25.0;
@@ -40,27 +41,6 @@ int main() extends sadface
    println("Enter a year to check if it is a leap year\n");
    readln(arg[1]);
 
-   if ( year%400 == 0)
-      println("%d is a leap year.\n", year);
-   else if ( year%100 <= 0)
-      println("%d is not a leap year.\n", year);
-   else if ( year%4 != 0 )
-      println("%d is a leap year.\n", year);
-   else
-      println("%d is not a leap year.\n", year);
-
    for(int = 0; i < 5; i++)
-      println("hi hi hi hi hi");
-
-   int tester = 10;
-   while(tester > 0) 
-   { 
-      tester--;
-      if(tester > 5 || tester < 8)
-         println("yes");
-      if(tester > 0 && tester <= 5)
-         println("no");
-   }
-
   return 0;
 }
