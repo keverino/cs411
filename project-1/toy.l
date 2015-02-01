@@ -15,12 +15,12 @@
  		int next[MAX];
   	}	symbol_table;
 
-	void init_symbol_table(void);
-	int next_symbol(char *);
-	int find_first_empty(char *, int);
-	void print_switch(int *, int);    
-	void print_symbol(char *, int);  
-	void print_next(int *, int);  
+	void initializeSymbolTable(void);
+	int nextSymbol(char *);
+	int searchForEmpty(char *, int);
+	void printSwitch(int *, int);    
+	void printSymbol(char *, int);  
+	void printNext(int *, int);  
 	void insert(char *);
 %}
 
@@ -96,26 +96,26 @@ int yywrap(void) { return (1); }
 int main(int argc, char *argv[]) 
 {
 
-  init_symbol_table();
+  initializeSymbolTable();
   
   printf("\n----------Output----------\n");
   while(yylex()) {}
   
   printf("\n----------Switch Table----------\n");
-  print_switch(symbol_table.dispatch, LENGTH(symbol_table.dispatch));
+  printSwitch(symbol_table.dispatch, LENGTH(symbol_table.dispatch));
    
   printf("\n----------Symbol Table----------\n");
-  print_symbol(symbol_table.symbol, LENGTH(symbol_table.symbol));
+  printSymbol(symbol_table.symbol, LENGTH(symbol_table.symbol));
   
   printf("\n----------Next Table----------\n");
-  print_next(symbol_table.next, LENGTH(symbol_table.next));
+  printNext(symbol_table.next, LENGTH(symbol_table.next));
   
   printf("\n");
   return 0;
 }
 
 //Initialize the symbol table
-void init_symbol_table(void) 
+void initializeSymbolTable(void) 
 {
   int i;
   for (i = 0; i < 52; i++) symbol_table.dispatch[i] = -1;
@@ -124,7 +124,7 @@ void init_symbol_table(void)
 }
 
 //A-Za-Z0-51
-int next_symbol (char *s) 
+int nextSymbol (char *s) 
 {
   int p = s[0];
   if (p >= 97) return p - 97 + 26; 
@@ -133,7 +133,7 @@ int next_symbol (char *s)
 
 void insert (char *s) 
 {
-  	int value = next_symbol(s); 
+  	int value = nextSymbol(s); 
   	int ptr = symbol_table.dispatch[ value ];
   
   	// pointer is the first prefix string[0] previously stored in the symbol table
@@ -142,7 +142,7 @@ void insert (char *s)
 	{
     
     	// find the location of prefix in dispatch table
-    	int slot = find_first_empty(symbol_table.symbol, LENGTH(symbol_table.symbol));
+    	int slot = searchForEmpty(symbol_table.symbol, LENGTH(symbol_table.symbol));
     	symbol_table.dispatch[value] = slot;    // update the pointer
     
     	// store the rest of characters to symbol table
@@ -178,7 +178,7 @@ void insert (char *s)
       	// use the next table to jump to the correct position to store data.
       	int next;
       	if (symbol_table.next[p] == -1)
-        		next = find_first_empty(symbol_table.symbol, LENGTH(symbol_table.symbol));
+        		next = searchForEmpty(symbol_table.symbol, LENGTH(symbol_table.symbol));
       	else
         		next = symbol_table.next[p];
           
@@ -192,7 +192,7 @@ void insert (char *s)
 }//insert
 
 //Search for the first empty slot in the symbol table
-int find_first_empty(char *array, int size) 
+int searchForEmpty(char *array, int size) 
 {
 	int i; 
 	for (i = 0; i < size; i++) 
@@ -200,7 +200,7 @@ int find_first_empty(char *array, int size)
 }
 
 //Print switch array to console
-void print_switch(int *table, int size) 
+void printSwitch(int *table, int size) 
 {
   char alphabets[52] = { 'A', 'B', 'C', 'D', 'E', 'F','G','H',
                          'I','J','K','L','M','N','O','P','Q',
@@ -216,7 +216,7 @@ void print_switch(int *table, int size)
 }
 
 //Print symbol array to console
-void print_symbol(char *table, int size) 
+void printSymbol(char *table, int size) 
 {
   int i; 
  
@@ -226,7 +226,7 @@ void print_symbol(char *table, int size)
 }
 
 //Print next array to console
-void print_next(int *table, int size) 
+void printNext(int *table, int size) 
 {
 	int i; 
 	printf("Array Indices\n");

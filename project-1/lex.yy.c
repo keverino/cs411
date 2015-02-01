@@ -582,12 +582,12 @@ char *yytext;
  		int next[MAX];
   	}	symbol_table;
 
-	void init_symbol_table(void);
-	int next_symbol(char *);
-	int find_first_empty(char *, int);
-	void print_switch(int *, int);    
-	void print_symbol(char *, int);  
-	void print_next(int *, int);  
+	void initializeSymbolTable(void);
+	int nextSymbol(char *);
+	int searchForEmpty(char *, int);
+	void printSwitch(int *, int);    
+	void printSymbol(char *, int);  
+	void printNext(int *, int);  
 	void insert(char *);
 #line 593 "lex.yy.c"
 
@@ -973,37 +973,37 @@ YY_RULE_SETUP
 case 22:
 YY_RULE_SETUP
 #line 62 "toy.l"
-{ printf("plus "); 					return(t_plus); }
+{ printf("plus "); 			return(t_plus); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 63 "toy.l"
-{ printf("minus "); 					return(t_minus); }
+{ printf("minus "); 		return(t_minus); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 64 "toy.l"
-{ printf("multiplication "); 		return(t_multiplication); }
+{ printf("multiplication "); 	return(t_multiplication); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 65 "toy.l"
-{ printf("division "); 				return(t_division); }
+{ printf("division "); 		return(t_division); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 66 "toy.l"
-{ printf("mod "); 					return(t_mod);}
+{ printf("mod ");			return(t_mod);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 67 "toy.l"
-{ printf("lessequal "); 			return(t_lessequal); }
+{ printf("lessequal "); 		return(t_lessequal); }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
 #line 68 "toy.l"
-{ printf("greater "); 				return(t_greater); }
+{ printf("greater "); 		return(t_greater); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
@@ -1013,77 +1013,77 @@ YY_RULE_SETUP
 case 30:
 YY_RULE_SETUP
 #line 70 "toy.l"
-{ printf("equal "); 					return(t_equal); }
+{ printf("equal "); 		return(t_equal); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 71 "toy.l"
-{ printf("notequal "); 				return(t_notequal); }
+{ printf("notequal "); 		return(t_notequal); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 72 "toy.l"
-{ printf("and "); 					return(t_and);}
+{ printf("and "); 			return(t_and);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 73 "toy.l"
-{ printf("or "); 						return(t_or);}
+{ printf("or "); 			return(t_or);}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 74 "toy.l"
-{ printf("not "); 					return(t_not);}
+{ printf("not "); 			return(t_not);}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
 #line 75 "toy.l"
-{ printf("assignop "); 				return(t_assignop); }
+{ printf("assignop "); 		return(t_assignop); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
 #line 76 "toy.l"
-{ printf("semicolon "); 			return(t_semicolon); }
+{ printf("semicolon "); 		return(t_semicolon); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 77 "toy.l"
-{ printf("comma "); 					return(t_comma); }
+{ printf("comma "); 		return(t_comma); }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 78 "toy.l"
-{ printf("period "); 				return(t_period); }
+{ printf("period "); 		return(t_period); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 79 "toy.l"
-{ printf("leftparen "); 			return(t_leftparen); }
+{ printf("leftparen "); 		return(t_leftparen); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 80 "toy.l"
-{ printf("rightparen "); 			return(t_rightparen); }
+{ printf("rightparen "); 		return(t_rightparen); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 81 "toy.l"
-{ printf("leftbracket "); 			return(t_leftbracket); }
+{ printf("leftbracket "); 		return(t_leftbracket); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 82 "toy.l"
-{ printf("rightbracket ");			return(t_rightbracket); }
+{ printf("rightbracket ");		return(t_rightbracket); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
 #line 83 "toy.l"
-{ printf("leftbrace "); 			return(t_leftbrace); }
+{ printf("leftbrace "); 		return(t_leftbrace); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
 #line 84 "toy.l"
-{ printf("rightbrace "); 			return(t_rightbrace); }
+{ printf("rightbrace "); 		return(t_rightbrace); }
 	YY_BREAK
 case 45:
 /* rule 45 can match eol */
@@ -1094,28 +1094,28 @@ YY_RULE_SETUP
 case 46:
 YY_RULE_SETUP
 #line 86 "toy.l"
-{ printf("intconstant "); 			return(t_intconstant); }
+{ printf("intconstant "); 		return(t_intconstant); }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 87 "toy.l"
-{ printf("doubleconstant "); 		return(t_doubleconstant); }
+{ printf("doubleconstant "); 	return(t_doubleconstant); }
 	YY_BREAK
 case 48:
 /* rule 48 can match eol */
 YY_RULE_SETUP
 #line 88 "toy.l"
-{ printf("stringconstant "); 		return(t_stringconstant); }
+{ printf("stringconstant "); 	return(t_stringconstant); }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
 #line 89 "toy.l"
-{ printf("id "); insert(yytext); return(t_id); }
+{ printf("id "); insert(yytext);	return(t_id); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
 #line 90 "toy.l"
-{; /* ignore whitespace */ }
+{; }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
@@ -2133,26 +2133,26 @@ int yywrap(void) { return (1); }
 int main(int argc, char *argv[]) 
 {
 
-  init_symbol_table();
+  initializeSymbolTable();
   
   printf("\n----------Output----------\n");
   while(yylex()) {}
   
   printf("\n----------Switch Table----------\n");
-  print_switch(symbol_table.dispatch, LENGTH(symbol_table.dispatch));
+  printSwitch(symbol_table.dispatch, LENGTH(symbol_table.dispatch));
    
   printf("\n----------Symbol Table----------\n");
-  print_symbol(symbol_table.symbol, LENGTH(symbol_table.symbol));
+  printSymbol(symbol_table.symbol, LENGTH(symbol_table.symbol));
   
   printf("\n----------Next Table----------\n");
-  print_next(symbol_table.next, LENGTH(symbol_table.next));
+  printNext(symbol_table.next, LENGTH(symbol_table.next));
   
   printf("\n");
   return 0;
 }
 
 //Initialize the symbol table
-void init_symbol_table(void) 
+void initializeSymbolTable(void) 
 {
   int i;
   for (i = 0; i < 52; i++) symbol_table.dispatch[i] = -1;
@@ -2161,7 +2161,7 @@ void init_symbol_table(void)
 }
 
 //A-Za-Z0-51
-int next_symbol (char *s) 
+int nextSymbol (char *s) 
 {
   int p = s[0];
   if (p >= 97) return p - 97 + 26; 
@@ -2170,7 +2170,7 @@ int next_symbol (char *s)
 
 void insert (char *s) 
 {
-  	int value = next_symbol(s); 
+  	int value = nextSymbol(s); 
   	int ptr = symbol_table.dispatch[ value ];
   
   	// pointer is the first prefix string[0] previously stored in the symbol table
@@ -2179,7 +2179,7 @@ void insert (char *s)
 	{
     
     	// find the location of prefix in dispatch table
-    	int slot = find_first_empty(symbol_table.symbol, LENGTH(symbol_table.symbol));
+    	int slot = searchForEmpty(symbol_table.symbol, LENGTH(symbol_table.symbol));
     	symbol_table.dispatch[value] = slot;    // update the pointer
     
     	// store the rest of characters to symbol table
@@ -2215,7 +2215,7 @@ void insert (char *s)
       	// use the next table to jump to the correct position to store data.
       	int next;
       	if (symbol_table.next[p] == -1)
-        		next = find_first_empty(symbol_table.symbol, LENGTH(symbol_table.symbol));
+        		next = searchForEmpty(symbol_table.symbol, LENGTH(symbol_table.symbol));
       	else
         		next = symbol_table.next[p];
           
@@ -2229,7 +2229,7 @@ void insert (char *s)
 }//insert
 
 //Search for the first empty slot in the symbol table
-int find_first_empty(char *array, int size) 
+int searchForEmpty(char *array, int size) 
 {
 	int i; 
 	for (i = 0; i < size; i++) 
@@ -2237,7 +2237,7 @@ int find_first_empty(char *array, int size)
 }
 
 //Print switch array to console
-void print_switch(int *table, int size) 
+void printSwitch(int *table, int size) 
 {
   char alphabets[52] = { 'A', 'B', 'C', 'D', 'E', 'F','G','H',
                          'I','J','K','L','M','N','O','P','Q',
@@ -2253,7 +2253,7 @@ void print_switch(int *table, int size)
 }
 
 //Print symbol array to console
-void print_symbol(char *table, int size) 
+void printSymbol(char *table, int size) 
 {
   int i; 
  
@@ -2263,7 +2263,7 @@ void print_symbol(char *table, int size)
 }
 
 //Print next array to console
-void print_next(int *table, int size) 
+void printNext(int *table, int size) 
 {
 	int i; 
 	printf("Array Indices\n");
