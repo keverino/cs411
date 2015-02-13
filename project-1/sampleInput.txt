@@ -20,6 +20,7 @@ class cs411 {
    boolean flag;
    string s;
    int [] a;
+
    flag = true;
    Funny = 0X89aB; funny = 123456E+7;
    s = "hello world";
