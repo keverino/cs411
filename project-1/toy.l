@@ -66,6 +66,7 @@ true|false  { printf("boolconstant "); 		return(t_boolconstant); }
 "%"	    { printf("mod ");			return(t_mod);}
 "<="        { printf("lessequal "); 		return(t_lessequal); }
 ">"         { printf("greater "); 		return(t_greater); }
+"<"         { printf("less ");                  return(t_less);}
 ">="        { printf("greaterequal "); 		return(t_greaterequal); }
 "=="        { printf("equal "); 		return(t_equal); }
 "!="        { printf("notequal "); 		return(t_notequal); }
