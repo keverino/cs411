@@ -1,0 +1,6 @@
+Project 2 Description:
+
+You are to implement a syntax analyzer for the programming language Toy, as defined in project #1.
+You should first design a CFG G for Toy based on the following Backus Normal Form (BNF)
+description, and then write a program to (1) create a parsing table for G, and (2) perform a onesymbol
+lookahead parsing on various input Toy programs and print appropriate parsing actions. 
