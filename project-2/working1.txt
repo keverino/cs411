@@ -1,0 +1,9 @@
+/* Correct Syntax */ 
+
+int sum(int a, int b) {
+  return a + b;
+}
+
+void main() {
+  println(sum(10, 5));
+}

@@ -1,0 +1,12 @@
+/* Correct Syntax */
+
+class cookies {
+  // everyone likes cookies
+  void bake() {
+    println("baking...");  
+  }
+}
+
+class yummy extends cookies {
+  // because cookies are yummy
+}

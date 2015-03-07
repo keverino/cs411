@@ -1,0 +1,5 @@
+int double x = 10; /* 2 types on declaration */
+string a = "yes";
+string b = "no;
+string c = "maybe";
+int a = 0 /* VariableDecl without semicolon */
