@@ -183,6 +183,9 @@ Expr: Lvalue t_assignop Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_minus Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_multiplication Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_division Expr { printf("[Reduce %i%s",yyn,"]");}
+	 | Expr t_mod Expr { printf("[Reduce %i%s",yyn,"]");}
+	 | Expr t_or Expr { printf("[Reduce %i%s",yyn,"]");}
+	 | Expr t_and Expr { printf("[Reduce %i%s",yyn,"]");}
     | t_minus Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_less Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_lessequal Expr { printf("[Reduce %i%s",yyn,"]");}

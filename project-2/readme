@@ -4,3 +4,15 @@ You are to implement a syntax analyzer for the programming language Toy, as defi
 You should first design a CFG G for Toy based on the following Backus Normal Form (BNF)
 description, and then write a program to (1) create a parsing table for G, and (2) perform a onesymbol
 lookahead parsing on various input Toy programs and print appropriate parsing actions. 
+
+Note: Bison parameters
+----------------------------------
+-d: generates toy.tab.h (token definitions)
+-v: generates toy.output (parsing table and conflict reports)
+
+How to run:
+----------------------------------
+yacc -d -v toy.y 
+lex toy.l 
+cc lex.yy.c toy.tab.c -ly -ll
+./a.out < sampleInput.txt
