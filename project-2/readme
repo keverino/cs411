@@ -12,7 +12,7 @@ Note: Bison parameters
 
 How to run:
 ----------------------------------
-yacc -d -v toy.y 
-lex toy.l 
+bison -d -v toy.y 
+flex toy.l 
 cc lex.yy.c toy.tab.c -ly -ll
 ./a.out < sampleInput.txt
