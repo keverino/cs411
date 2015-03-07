@@ -1,6 +1,4 @@
-  int yylval;
-
-  // Tokens
+// Tokens
   #define t_bool            1000
   #define t_break           1001
   #define t_class           1002

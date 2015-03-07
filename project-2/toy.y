@@ -216,7 +216,7 @@ Constant: t_intconstant { $$ = $1; printf("[Reduce %i%s",yyn,"]");}
 
 %%
 
-int main() { yyparse(); }
+int main() { yyparse(); return 0;}
 yyerror(s)
 char *s; { printf("bison error: %s\n", s); }
 yywrap() { return(0); }
