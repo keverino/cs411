@@ -1,0 +1,46 @@
+/* a couple of test cases */
+class winter2015cs411 implements sleep
+{
+   //test boolean
+   boolean giveUsGoodGrade = true;
+   boolean schoolIsStressfull = true;
+   boolean raining = false;
+
+   //test arrays
+   char [10] characters;
+   characters = "herpaderp";
+   int [] integers;
+
+	if ( year % 400 == 0)
+
+   //test doubles
+   double doubleh = 25.0;
+   double obby = 0.5;
+
+   //testing int hex
+   int schlick = 0X89aB; 
+
+   //testing scientific notation
+   int hehehehe = 123456E+7;
+   double yobro = 1.2e+9;
+
+   //test string
+   string dingleberry = "gross";
+
+   //test math
+   double addition = doubleh + obby;
+   double subtraction = doubleh - obby;
+   double mult = doubleh * obby;
+   double div = doubleh / obby;
+}
+/* main function tests */
+int main() extends sadface
+{
+   int year;
+
+   println("Enter a year to check if it is a leap year\n");
+   readln(arg[1]);
+
+   for(int = 0; i < 5; i++)
+  return 0;
+}
