@@ -33,6 +33,7 @@ strConst    "\""([^\"]*)*"\""
 doubConst   ({digit}+\.{digit}+|{digit}+\.{digit}+[eE]\+[0-9]+)
 intConst    ({digit}+|0[xX][0-9a-fA-F]+|{digit}+[eE]\+[0-9]+)
 id  			{letter}({letter}|{digit}|"_")*
+newArray		(\[\]|\[[0-9]+\])+
    
 %%
 
