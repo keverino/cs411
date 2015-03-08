@@ -7,7 +7,7 @@ lookahead parsing on various input Toy programs and print appropriate parsing ac
 
 Note: Bison parameters
 ----------------------------------
--y: forces Bison to act as if was Yacc
+-y: forces Bison to act as if it was Yacc
 -d: generates toy.tab.h (token definitions)
 -v: generates toy.output (parsing table and conflict reports)
 
