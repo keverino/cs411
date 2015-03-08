@@ -7,13 +7,13 @@ lookahead parsing on various input Toy programs and print appropriate parsing ac
 
 Note: Bison parameters
 ----------------------------------
--y: forces bison to act as if was yacc (Most importantly, imitate Yacc’s output file name conventions)
+-y: forces Bison to act as if was Yacc
 -d: generates toy.tab.h (token definitions)
 -v: generates toy.output (parsing table and conflict reports)
 
 How to run:
 ----------------------------------
-bison -d -v toy.y 
+bison -d -v -y toy.y 
 flex toy.l 
 cc lex.yy.c toy.tab.c -ly -ll
 ./a.out < sampleInput.txt
