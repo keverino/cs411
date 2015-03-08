@@ -1,5 +1,6 @@
 %{
 #include <stdio.h>
+int yylex();
 %}
 
 %token t_bool
@@ -31,6 +32,9 @@
 %token t_greaterequal
 %token t_equal
 %token t_notequal
+%token t_and
+%token t_or
+%token t_not
 %token t_assignop
 %token t_semicolon
 %token t_comma
@@ -183,9 +187,10 @@ Expr: Lvalue t_assignop Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_minus Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_multiplication Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_division Expr { printf("[Reduce %i%s",yyn,"]");}
-	 | Expr t_mod Expr { printf("[Reduce %i%s",yyn,"]");}
-	 | Expr t_or Expr { printf("[Reduce %i%s",yyn,"]");}
-	 | Expr t_and Expr { printf("[Reduce %i%s",yyn,"]");}
+    | Expr t_mod Expr { printf("[Reduce %i%s",yyn,"]");}
+    | Expr t_or Expr { printf("[Reduce %i%s",yyn,"]");}
+    | Expr t_and Expr { printf("[Reduce %i%s",yyn,"]");}
+    | Expr t_not Expr { printf("[Reduce %i%s",yyn,"]");}
     | t_minus Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_less Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_lessequal Expr { printf("[Reduce %i%s",yyn,"]");}
@@ -219,7 +224,7 @@ Constant: t_intconstant { $$ = $1; printf("[Reduce %i%s",yyn,"]");}
 
 %%
 
-int main() { yyparse(); return 0;}
+int main() { yyparse(); }
 yyerror(s)
 char *s; { printf("bison error: %s\n", s); }
 yywrap() { return(0); }

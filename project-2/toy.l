@@ -48,14 +48,15 @@ true|false  { printf("\n%s ", yytext); return (t_boolconstant); }
 "-"         { printf("\n%s ", yytext); return(t_minus); }
 "*"         { printf("\n%s ", yytext); return(t_multiplication); }
 "/"         { printf("\n%s ", yytext); return(t_division); }
-"%"	    	{ printf("\n%s ", yytext); return(t_mod); }
+"%"         { printf("\n%s ", yytext); return(t_mod); }
 "<="        { printf("\n%s ", yytext); return(t_lessequal); }
 ">"         { printf("\n%s ", yytext); return (t_greater); }
 ">="        { printf("\n%s ", yytext); return(t_greaterequal); }
 "=="        { printf("\n%s ", yytext); return (t_equal); }
 "!="        { printf("\n%s ", yytext); return (t_notequal); }
-"&&"	    	{ printf("\n%s ", yytext); return (t_and); }
-"||"	    	{ printf("\n%s ", yytext); return (t_or); }
+"&&"        { printf("\n%s ", yytext); return (t_and); }
+"||"        { printf("\n%s ", yytext); return (t_or); }
+"!"         { printf("\n%s ", yytext); return (t_not); }
 "="         { printf("\n%s ", yytext); return (t_assignop); }
 ";"         { printf("\n%s ", yytext); return(t_semicolon); }
 ","         { printf("\n%s ", yytext); return(t_comma); }
