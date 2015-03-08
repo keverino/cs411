@@ -1,0 +1,4 @@
+./a.out < test-cases/broken1.txt
+
+int [Reduce 14]
+double bison error: syntax error

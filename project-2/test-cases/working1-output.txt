@@ -1,0 +1,35 @@
+./a.out < test-cases/working2.txt
+
+
+
+class 
+cookies 
+{ [Reduce 26][Reduce 28]
+
+
+void 
+bake 
+( 
+) [Reduce 23]
+{ 
+
+println [Reduce 10]
+( 
+"baking..." [Reduce 95][Reduce 64]
+) [Reduce 60]
+; [Reduce 58][Reduce 50][Reduce 42]
+
+} [Reduce 40][Reduce 20][Reduce 32]
+
+} [Reduce 24][Reduce 7][Reduce 4]
+
+
+class 
+yummy 
+extends 
+cookies [Reduce 25]
+{ [Reduce 28]
+
+
+} [Reduce 33][Reduce 24][Reduce 7][Reduce 3]
+

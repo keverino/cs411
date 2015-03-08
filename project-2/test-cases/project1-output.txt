@@ -1,0 +1,84 @@
+./a.out < test-cases/project1.txt
+
+int [Reduce 14]
+fact 
+( 
+int [Reduce 14]
+x [Reduce 12][Reduce 22]
+) 
+{ 
+
+
+if [Reduce 10]
+( 
+x 
+> [Reduce 85][Reduce 65]
+1 [Reduce 93][Reduce 64]
+) [Reduce 79]
+return 
+x 
+* [Reduce 85][Reduce 65]
+fact 
+( 
+x 
+- [Reduce 85][Reduce 65]
+1 [Reduce 93][Reduce 64]
+) [Reduce 69][Reduce 90][Reduce 88][Reduce 66]
+; [Reduce 70][Reduce 61][Reduce 57][Reduce 49]
+
+else 
+return 
+1 [Reduce 93][Reduce 64]
+; [Reduce 61][Reduce 57][Reduce 49][Reduce 53][Reduce 45][Reduce 42]
+
+} [Reduce 40][Reduce 19][Reduce 6][Reduce 4]
+
+void 
+main 
+( 
+) [Reduce 23]
+{ 
+
+
+int [Reduce 14]
+x [Reduce 12]
+; [Reduce 11]
+
+int [Reduce 14]
+total [Reduce 12]
+; [Reduce 11]
+
+println [Reduce 10][Reduce 9][Reduce 9]
+( 
+"factorial of 10 is " [Reduce 95][Reduce 64]
+, [Reduce 60]
+fact 
+( 
+10 [Reduce 93][Reduce 64]
+) [Reduce 90][Reduce 88][Reduce 66]
+, [Reduce 59]
+" from the recursive function" [Reduce 95][Reduce 64]
+) [Reduce 59]
+; [Reduce 58][Reduce 50][Reduce 42]
+
+total 
+= [Reduce 85]
+1 [Reduce 93][Reduce 64]
+; [Reduce 63][Reduce 61][Reduce 44][Reduce 41]
+x 
+= [Reduce 85]
+1 [Reduce 93][Reduce 64]
+; [Reduce 63][Reduce 61][Reduce 44][Reduce 41]
+
+for 
+( 
+; [Reduce 62]
+x 
+<= [Reduce 85][Reduce 65]
+10 [Reduce 93][Reduce 64]
+; [Reduce 78]
+) [Reduce 62]
+{ 
+total [Reduce 18]
+= bison error: syntax error
+
