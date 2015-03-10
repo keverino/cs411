@@ -1,0 +1,34 @@
+class Tester implements Tester2 {
+	int x;
+	int y;
+	Tester t;
+
+	int adder ( int a, int b ) {
+		x = a;
+		y = b;
+		if ( (x >= 0) && (y >= 0) ) {
+			return ( x + y );
+		} else {
+			return -1;
+		}
+	}
+}
+
+string s;
+
+void printString (string testString) {
+	int i;
+
+	s = testString;
+	for (i = 0; i <= 5; i = i + 1) {
+		double[] testArray;
+		testArray = newarray (3, double);
+	}
+	println (s);
+	Tester.adder(3,4);
+}
+
+interface TesterBuilder {
+	int adder(int a, int b);
+	void printString (string testString);
+}

@@ -368,8 +368,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 52
-#define YY_END_OF_BUFFER 53
+#define YY_NUM_RULES 53
+#define YY_END_OF_BUFFER 54
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -379,23 +379,23 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[158] =
     {   0,
-        0,    0,   53,   51,   50,   45,   34,   51,   26,   51,
-       39,   40,   24,   22,   37,   23,   38,   25,   46,   46,
-       36,   51,   35,   28,   49,   41,   42,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,   49,   49,
-       43,   51,   44,   50,   31,    0,   48,   32,    0,    0,
-        0,   46,    0,   46,   27,   30,   29,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   10,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   33,    0,    0,    0,
-        1,   47,    0,   47,   46,   49,   49,   49,   49,   49,
-       49,   49,    9,   49,   12,   49,   49,   49,   49,   49,
+        0,    0,   54,   52,   51,   46,   35,   52,   26,   52,
+       40,   41,   24,   22,   38,   23,   39,   25,   47,   47,
+       37,   29,   36,   28,   50,   42,   43,   50,   50,   50,
+       50,   50,   50,   50,   50,   50,   50,   50,   50,   50,
+       44,   52,   45,   51,   32,    0,   49,   33,    0,    0,
+        0,   47,    0,   47,   27,   31,   30,   50,   50,   50,
+       50,   50,   50,   50,   50,   50,   10,   50,   50,   50,
+       50,   50,   50,   50,   50,   50,   34,    0,    0,    0,
+        1,   48,    0,   48,   47,   50,   50,   50,   50,   50,
+       50,   50,    9,   50,   12,   50,   50,   50,   50,   50,
 
-       49,   49,   49,    2,    0,    3,   49,   49,   49,    7,
-       49,   49,   49,   49,   49,   49,   49,   49,   49,   21,
-       19,   49,    0,   47,    4,    5,   49,   49,   49,   49,
-       49,   49,   49,   49,   49,   20,    6,   49,   49,   49,
-       49,   49,   16,   17,   18,    8,   49,   49,   49,   15,
-       49,   49,   14,   49,   13,   11,    0
+       50,   50,   50,    2,    0,    3,   50,   50,   50,    7,
+       50,   50,   50,   50,   50,   50,   50,   50,   50,   21,
+       19,   50,    0,   48,    4,    5,   50,   50,   50,   50,
+       50,   50,   50,   50,   50,   20,    6,   50,   50,   50,
+       50,   50,   16,   17,   18,    8,   50,   50,   50,   15,
+       50,   50,   14,   50,   13,   11,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -993,125 +993,130 @@ YY_RULE_SETUP
 case 29:
 YY_RULE_SETUP
 #line 54 "toy.l"
-{ printf("\n%s ", yytext); return(t_greaterequal); }
+{ printf("\n%s ", yytext); return (t_less); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 55 "toy.l"
-{ printf("\n%s ", yytext); return (t_equal); }
+{ printf("\n%s ", yytext); return(t_greaterequal); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 56 "toy.l"
-{ printf("\n%s ", yytext); return (t_notequal); }
+{ printf("\n%s ", yytext); return (t_equal); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 57 "toy.l"
-{ printf("\n%s ", yytext); return (t_and); }
+{ printf("\n%s ", yytext); return (t_notequal); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 58 "toy.l"
-{ printf("\n%s ", yytext); return (t_or); }
+{ printf("\n%s ", yytext); return (t_and); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 59 "toy.l"
-{ printf("\n%s ", yytext); return (t_not); }
+{ printf("\n%s ", yytext); return (t_or); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
 #line 60 "toy.l"
-{ printf("\n%s ", yytext); return (t_assignop); }
+{ printf("\n%s ", yytext); return (t_not); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
 #line 61 "toy.l"
-{ printf("\n%s ", yytext); return(t_semicolon); }
+{ printf("\n%s ", yytext); return (t_assignop); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 62 "toy.l"
-{ printf("\n%s ", yytext); return(t_comma); }
+{ printf("\n%s ", yytext); return(t_semicolon); }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 63 "toy.l"
-{ printf("\n%s ", yytext); return(t_period); }
+{ printf("\n%s ", yytext); return(t_comma); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 64 "toy.l"
-{ printf("\n%s ", yytext); return(t_leftparen); }
+{ printf("\n%s ", yytext); return(t_period); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 65 "toy.l"
-{ printf("\n%s ", yytext); return(t_rightparen); }
+{ printf("\n%s ", yytext); return(t_leftparen); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 66 "toy.l"
-{ printf("\n%s ", yytext); return(t_leftbracket); }
+{ printf("\n%s ", yytext); return(t_rightparen); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 67 "toy.l"
-{ printf("\n%s ", yytext); return(t_rightbracket); }
+{ printf("\n%s ", yytext); return(t_leftbracket); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
 #line 68 "toy.l"
-{ printf("\n%s ", yytext); return(t_leftbrace); }
+{ printf("\n%s ", yytext); return(t_rightbracket); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
 #line 69 "toy.l"
-{ printf("\n%s ", yytext); return(t_rightbrace); }
+{ printf("\n%s ", yytext); return(t_leftbrace); }
 	YY_BREAK
 case 45:
-/* rule 45 can match eol */
 YY_RULE_SETUP
-#line 71 "toy.l"
-{ printf("\n"); }
+#line 70 "toy.l"
+{ printf("\n%s ", yytext); return(t_rightbrace); }
 	YY_BREAK
 case 46:
+/* rule 46 can match eol */
 YY_RULE_SETUP
 #line 72 "toy.l"
-{ printf("\n%s ", yytext); return(t_intconstant); }
+{ printf("\n"); }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 73 "toy.l"
-{ printf("\n%s ", yytext); return(t_doubleconstant); }
+{ printf("\n%s ", yytext); return(t_intconstant); }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
 #line 74 "toy.l"
-{ printf("\n%s ", yytext); return(t_stringconstant); }
+{ printf("\n%s ", yytext); return(t_doubleconstant); }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
 #line 75 "toy.l"
-{ printf("\n%s ", yytext); return(t_id); }
+{ printf("\n%s ", yytext); return(t_stringconstant); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
 #line 76 "toy.l"
-{; /* ignore whitespace */ }
+{ printf("\n%s ", yytext); return(t_id); }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
 #line 77 "toy.l"
-{; /* ignore characters that are not defined*/ }
+{; /* ignore whitespace */ }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 79 "toy.l"
+#line 78 "toy.l"
+{; /* ignore characters that are not defined*/ }
+	YY_BREAK
+case 53:
+YY_RULE_SETUP
+#line 80 "toy.l"
 ECHO;
 	YY_BREAK
-#line 1115 "lex.yy.c"
+#line 1120 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2109,7 +2114,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 79 "toy.l"
+#line 80 "toy.l"
 
 
 
