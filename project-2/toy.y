@@ -58,7 +58,7 @@ int yylex();
 %nonassoc t_less t_greater t_lessequal t_greaterequal 
 %left t_plus t_minus
 %left t_multiplication t_division t_mod
-%left t_not UMINUS //unary minus. context specific. 
+%left t_not UMINUS                 //unary minus. context specific. 
 %left t_leftbracket t_period
 %%
 

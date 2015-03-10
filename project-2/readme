@@ -16,4 +16,4 @@ How to run:
 bison -d -v -y toy.y 
 flex toy.l 
 cc lex.yy.c toy.tab.c -ly -ll
-./a.out < sampleInput.txt
+./a.out < test-cases/project1.txt
