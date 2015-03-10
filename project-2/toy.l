@@ -51,6 +51,7 @@ true|false  { printf("\n%s ", yytext); return (t_boolconstant); }
 "%"         { printf("\n%s ", yytext); return(t_mod); }
 "<="        { printf("\n%s ", yytext); return(t_lessequal); }
 ">"         { printf("\n%s ", yytext); return (t_greater); }
+"<"         { printf("\n%s ", yytext); return (t_less); }
 ">="        { printf("\n%s ", yytext); return(t_greaterequal); }
 "=="        { printf("\n%s ", yytext); return (t_equal); }
 "!="        { printf("\n%s ", yytext); return (t_notequal); }
