@@ -57,8 +57,9 @@ int yylex();
 %right t_equal t_notequal
 %nonassoc t_less t_greater t_lessequal t_greaterequal
 %left t_plus t_minus
-%left t_multiplication t_division
-
+%left t_multiplication t_division t_mod
+%left t_not UMINUS                 //unary minus. context specific. 
+%left t_leftbracket t_period
 %%
 
 Program: Dec { $$ = $1; printf("[Reduce %i%s",yyn,"]");}
@@ -191,7 +192,7 @@ Expr: Lvalue t_assignop Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_or Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_and Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_not Expr { printf("[Reduce %i%s",yyn,"]");}
-    | t_minus Expr { printf("[Reduce %i%s",yyn,"]");}
+    | t_minus Expr %prec UMINUS { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_less Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_lessequal Expr { printf("[Reduce %i%s",yyn,"]");}
     | Expr t_greater Expr { printf("[Reduce %i%s",yyn,"]");}
