@@ -1,0 +1,5 @@
+- print out shifts as well as reduces 
+- print out tokens, not direct name such as x instead of t_id 
+- identify all the conflicts, work towards resolving each one
+- number of conflicts is less important than discussion of how to resolve conflicts
+- initalization not supported, thats why void main() {int i =5;} was rejected. 
