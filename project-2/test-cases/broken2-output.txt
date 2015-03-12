@@ -1,5 +1,5 @@
 ./a.out < test-cases/broken2.txt
 
 class 
-1233121 bison error: syntax error
+intConst bison error: syntax error
 

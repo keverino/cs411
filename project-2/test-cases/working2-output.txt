@@ -3,33 +3,33 @@
 
 
 class 
-cookies 
-{ [Reduce 26][Reduce 28]
+id 
+leftbrace [Reduce 26][Reduce 28]
 
 
 void 
-bake 
-( 
-) [Reduce 23]
-{ 
+id 
+leftparen 
+rightparen [Reduce 23]
+leftbrace 
 
 println [Reduce 10]
-( 
-"baking..." [Reduce 95][Reduce 64]
-) [Reduce 60]
-; [Reduce 58][Reduce 50][Reduce 42]
+leftparen 
+stringConst [Reduce 95][Reduce 64]
+rightparen [Reduce 60]
+semicolon [Reduce 58][Reduce 50][Reduce 42]
 
-} [Reduce 40][Reduce 20][Reduce 32]
+rightbrace [Reduce 40][Reduce 20][Reduce 32]
 
-} [Reduce 24][Reduce 7][Reduce 4]
+rightbrace [Reduce 24][Reduce 7][Reduce 4]
 
 
 class 
-yummy 
+id 
 extends 
-cookies [Reduce 25]
-{ [Reduce 28]
+id [Reduce 25]
+leftbrace [Reduce 28]
 
 
-} [Reduce 33][Reduce 24][Reduce 7][Reduce 3]
+rightbrace [Reduce 33][Reduce 24][Reduce 7][Reduce 3]
 

@@ -1,35 +1,41 @@
-./a.out < test-cases/working2.txt
+./a.out < test-cases/working1.txt
 
+int [Reduce 14]
+id 
+leftparen 
+int [Reduce 14]
+id [Reduce 12][Reduce 22]
+comma 
+int [Reduce 14]
+id [Reduce 12][Reduce 21]
+rightparen 
+leftbrace 
 
+return [Reduce 10]
+id 
+plus [Reduce 85][Reduce 65]
+id 
+semicolon [Reduce 85][Reduce 65][Reduce 68][Reduce 61][Reduce 57][Reduce 49][Reduce 42]
 
-class 
-cookies 
-{ [Reduce 26][Reduce 28]
+rightbrace [Reduce 40][Reduce 19][Reduce 6][Reduce 4]
 
 
 void 
-bake 
-( 
-) [Reduce 23]
-{ 
+id 
+leftparen 
+rightparen [Reduce 23]
+leftbrace 
 
 println [Reduce 10]
-( 
-"baking..." [Reduce 95][Reduce 64]
-) [Reduce 60]
-; [Reduce 58][Reduce 50][Reduce 42]
+leftparen 
+id 
+leftparen 
+intConst [Reduce 93][Reduce 64]
+comma 
+intConst [Reduce 93][Reduce 64]
+rightparen [Reduce 90][Reduce 91][Reduce 88][Reduce 66]
+rightparen [Reduce 60]
+semicolon [Reduce 58][Reduce 50][Reduce 42]
 
-} [Reduce 40][Reduce 20][Reduce 32]
-
-} [Reduce 24][Reduce 7][Reduce 4]
-
-
-class 
-yummy 
-extends 
-cookies [Reduce 25]
-{ [Reduce 28]
-
-
-} [Reduce 33][Reduce 24][Reduce 7][Reduce 3]
+rightbrace [Reduce 40][Reduce 20][Reduce 6][Reduce 3]
 
