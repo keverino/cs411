@@ -58,8 +58,8 @@ int yylex();
 %nonassoc t_less t_greater t_lessequal t_greaterequal 
 %left t_plus t_minus
 %left t_multiplication t_division t_mod
-%left t_not UMINUS                 //unary minus. context specific. 
-%left t_leftbracket t_period
+%right t_not UMINUS                 //unary minus. context specific. 
+%right t_leftbracket t_period
 %%
 
 Program: Dec { $$ = $1; printf("[Reduce %i%s",yyn,"]");}
@@ -225,7 +225,7 @@ Constant: t_intconstant { $$ = $1; printf("[Reduce %i%s",yyn,"]");}
 
 %%
 
-int main() { yyparse(); }
+//int main() { yyparse(); }
 yyerror(s)
 char *s; { printf("bison error: %s\n", s); }
-yywrap() { return(0); }
+yywrap() { return(1); }
