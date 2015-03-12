@@ -51,6 +51,8 @@ int yylex();
 %token t_stringconstant
 %token t_id
 
+%right t_if 
+%right t_else
 %right t_assignop
 %left t_or
 %left t_and
@@ -63,7 +65,7 @@ int yylex();
 %%
 
 Program: Dec { $$ = $1; printf("[Reduce %i%s",yyn,"]");}
-  ;
+	  ;
 
 Dec: Dec Decl { $$ = $2; printf("[Reduce %i%s",yyn,"]");}
     | Decl { printf("[Reduce %i%s",yyn,"]");}
@@ -225,7 +227,11 @@ Constant: t_intconstant { $$ = $1; printf("[Reduce %i%s",yyn,"]");}
 
 %%
 
-//int main() { yyparse(); }
+int parse() { 
+
+printf("\n----------Parsing----------\n");
+ return yyparse(); 
+}
 yyerror(s)
-char *s; { printf("bison error: %s\n", s); }
+char *s; { printf("\nbison error: %s\n", s); }
 yywrap() { return(1); }
