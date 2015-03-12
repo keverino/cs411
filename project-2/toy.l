@@ -43,37 +43,37 @@ return      { printf("\n%s ", yytext); return (t_return); }
 string      { printf("\n%s ", yytext); return (t_string); }
 void        { printf("\n%s ", yytext); return (t_void); } 
 while       { printf("\n%s ", yytext); return (t_while); }
-true|false  { printf("\n%s ", yytext); return (t_boolconstant); } 
-"+"         { printf("\n%s ", yytext); return(t_plus); }
-"-"         { printf("\n%s ", yytext); return(t_minus); }
-"*"         { printf("\n%s ", yytext); return(t_multiplication); }
-"/"         { printf("\n%s ", yytext); return(t_division); }
-"%"         { printf("\n%s ", yytext); return(t_mod); }
-"<="        { printf("\n%s ", yytext); return(t_lessequal); }
-">"         { printf("\n%s ", yytext); return (t_greater); }
-"<"         { printf("\n%s ", yytext); return (t_less); }
-">="        { printf("\n%s ", yytext); return(t_greaterequal); }
-"=="        { printf("\n%s ", yytext); return (t_equal); }
-"!="        { printf("\n%s ", yytext); return (t_notequal); }
-"&&"        { printf("\n%s ", yytext); return (t_and); }
-"||"        { printf("\n%s ", yytext); return (t_or); }
-"!"         { printf("\n%s ", yytext); return (t_not); }
-"="         { printf("\n%s ", yytext); return (t_assignop); }
-";"         { printf("\n%s ", yytext); return(t_semicolon); }
-","         { printf("\n%s ", yytext); return(t_comma); }
-"."         { printf("\n%s ", yytext); return(t_period); }
-"("         { printf("\n%s ", yytext); return(t_leftparen); }
-")"         { printf("\n%s ", yytext); return(t_rightparen); }
-"["         { printf("\n%s ", yytext); return(t_leftbracket); }
-"]"         { printf("\n%s ", yytext); return(t_rightbracket); }
-"{"         { printf("\n%s ", yytext); return(t_leftbrace); }
-"}"         { printf("\n%s ", yytext); return(t_rightbrace); }
+true|false  { printf("\nboolConstant "); return (t_boolconstant); } 
+"+"         { printf("\nplus "); return(t_plus); }
+"-"         { printf("\nminus "); return(t_minus); }
+"*"         { printf("\nmultiplication "); return(t_multiplication); }
+"/"         { printf("\ndivision "); return(t_division); }
+"%"         { printf("\nmod "); return(t_mod); }
+"<="        { printf("\nlessequal "); return(t_lessequal); }
+">"         { printf("\ngreater "); return (t_greater); }
+"<"         { printf("\nless "); return (t_less); }
+">="        { printf("\ngreaterequal "); return(t_greaterequal); }
+"=="        { printf("\nequal "); return (t_equal); }
+"!="        { printf("\nnotequal "); return (t_notequal); }
+"&&"        { printf("\nand "); return (t_and); }
+"||"        { printf("\nor "); return (t_or); }
+"!"         { printf("\nnot "); return (t_not); }
+"="         { printf("\nassignop "); return (t_assignop); }
+";"         { printf("\nsemicolon "); return(t_semicolon); }
+","         { printf("\ncomma "); return(t_comma); }
+"."         { printf("\nperiod "); return(t_period); }
+"("         { printf("\nleftparen "); return(t_leftparen); }
+")"         { printf("\nrightparen "); return(t_rightparen); }
+"["         { printf("\nleftbracket "); return(t_leftbracket); }
+"]"         { printf("\nrightbracket "); return(t_rightbracket); }
+"{"         { printf("\nleftbrace "); return(t_leftbrace); }
+"}"         { printf("\nrightbrace "); return(t_rightbrace); }
 
 {newline}       { printf("\n"); }
-{integer}       { printf("\n%s ", yytext); return(t_intconstant); }
-{double}        { printf("\n%s ", yytext); return(t_doubleconstant); }
-{string}        { printf("\n%s ", yytext); return(t_stringconstant); }
-{identifier}    { printf("\n%s ", yytext); return(t_id); }
+{integer}       { printf("\nintConst "); return(t_intconstant); }
+{double}        { printf("\ndoubleConst "); return(t_doubleconstant); }
+{string}        { printf("\nstringConst "); return(t_stringconstant); }
+{identifier}    { printf("\nid "); return(t_id); }
 {ws}            {; /* ignore whitespace */ }
 .               {; /* ignore characters that are not defined*/ }
 
