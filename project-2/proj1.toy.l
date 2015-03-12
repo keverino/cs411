@@ -104,13 +104,14 @@ int main(int argc, char *argv[])
 {
 
   initializeSymbolTable();
-  
-  printf("\n----------Tokenization----------\n");
-  //while(yylex()) {}
-  
-  printf("\n----------Parsing----------\n");
-  yyparse();
-  
+    
+  int retval = parse(); 
+
+  if(retval == 0)
+  { printf("\nParser: Input accepted."); }
+  else 
+  { printf("\nParser: Input rejected."); }
+
  
   printf("\n");
   return 0;
@@ -191,6 +192,8 @@ void insert (char *s)
 			symbol_table.symbol[next] = '@';
     	}//end if
   }//end else
+
+ printf("[Shift]"); 
 }//insert
 
 //Search for the first empty slot in the symbol table
@@ -236,4 +239,3 @@ void printNext(int *table, int size)
   printf("\nContent:\n");
   for (i = 0; i < size; i++) printf("%1d ", table[i]);
 }
-
